@@ -1,0 +1,11 @@
+{
+  "repo_id": "mlx-community/Qwen3-1.7B-4bit",
+  "revision": "3b1b1768f8f8cf8351c712464f906e86c2b8269e",
+  "base_model": "Qwen/Qwen3-1.7B",
+  "license": "Apache-2.0",
+  "license_url": "https://huggingface.co/Qwen/Qwen3-1.7B/blob/main/LICENSE",
+  "local_path": "models/Qwen3-1.7B-4bit",
+  "quantization": "4-bit",
+  "verified_date": "2026-11-08",
+  "purpose": "首轮本机推理与 QLoRA 候选；尚未进行训练质量验证"
+}

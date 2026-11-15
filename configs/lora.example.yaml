@@ -1,0 +1,15 @@
+# 模板：复制后填写已核实许可、修订号并固定在本地的 MLX 模型目录。
+# 运行前核对本机安装版本的 mlx_lm.lora --help。
+model: models/REPLACE_WITH_VERIFIED_MODEL
+train: true
+fine_tune_type: lora
+data: data/exports/v001
+seed: 42
+batch_size: 1
+num_layers: 4
+iters: 20
+learning_rate: 0.00001
+max_seq_length: 512
+grad_checkpoint: true
+mask_prompt: true
+adapter_path: adapters/run-001

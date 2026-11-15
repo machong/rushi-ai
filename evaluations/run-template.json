@@ -1,0 +1,12 @@
+{
+  "run_id": null,
+  "base_model": {"id": null, "revision": null, "local_path": null, "quantization": null, "license": null, "file_hashes": {}},
+  "dataset_manifest": null,
+  "code_commit": null,
+  "environment_snapshot": null,
+  "training_config": null,
+  "training_log": null,
+  "adapter_path": null,
+  "evaluation": {"test_version": null, "system_prompt": null, "chat_template": null, "seed": 42, "generation_parameters": {}, "baseline_answers": null, "adapted_answers": null, "blind_review": null},
+  "known_limitations": []
+}

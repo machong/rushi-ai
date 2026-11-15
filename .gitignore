@@ -1,0 +1,21 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.env
+.env.*
+!.env.example
+# 素材、审核记录和生成数据默认留在本机。
+/data/*
+!/data/examples/
+!/data/README.md
+/adapters/*
+!/adapters/.gitkeep
+/evaluations/runs/
+/models/
+/runs/
+*.sqlite*
+/.tools/

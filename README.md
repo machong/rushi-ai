@@ -91,3 +91,53 @@
 随缘探索，随缘尽责，不执著结果。
 
 **愿此善因，利益一切有情。**
+
+## 开发与运行
+
+本仓库同时作为 Python 项目根目录，无需另建嵌套仓库。训练方法见 [训练方法](docs/training_method.md)。
+
+已实现审核记录结构校验、同来源跨集合与重复问题检查，以及带审核快照和 SHA-256 清单的数据集导出。训练、评估与检索包已预留；实际模型训练通过 MLX 官方入口运行。
+
+推荐 Python 3.12；项目安装要求 Python 3.10+。数据工具只依赖标准库，可先用现有 Python 运行：
+
+```sh
+PYTHONPATH=src python3 -m rushi doctor
+PYTHONPATH=src python3 -m rushi validate data/examples/review-record.jsonl
+PYTHONPATH=src python3 -m unittest discover -s tests -v
+```
+
+`doctor` 在训练环境未就绪时返回退出码 1。示例记录是草稿，仅用于检查结构，不能通过训练导出审核。
+
+- [项目WBS、当前进度与下一步计划](docs/project_wbs.md)
+- [训练方法与实施路线](docs/training_method.md)
+- [来源与资料使用政策](docs/source_policy.md)
+- [样本审核与模型评估标准](docs/review_rubric.md)
+- [训练环境与操作步骤](docs/training.md)
+- [数据审核与划分约定](docs/data-review.md)
+- [数据目录](data/README.md)
+- [LoRA 配置模板](configs/lora.example.yaml)
+- [运行与评估记录模板](evaluations/run-template.json)
+
+
+本机训练环境已安装，日常使用 `source .venv/bin/activate` 后运行 `rushi doctor`。
+已完成固定修订版 Qwen3-1.7B 4-bit 的中文推理；模型配置见 `configs/model.json`，本机状态和复现命令见 [训练文档](docs/training.md)。尚未启动微调。
+
+首个经文小段实验已完成资料整理与推理对照，见[《金刚经》无住布施实验](docs/experiments/diamond_pilot.md)；候选仍待人工审核，尚未训练。
+
+
+## 经义材料的最新约定
+
+经义解释以用户认可老师的实际讲解为依据，不能让 AI 按经文字面自行解释。优先老师为南怀瑾老师、星云大师、杨宁老师；无对应讲解时留待补齐。
+
+- [讲解依据与整理流程](docs/commentary_policy.md)
+- [已找到的讲解资料线索](docs/commentary_sources.md)
+
+此前《金刚经》实验的 AI 拟答已撤回，历史报告仅用于错误分析。
+
+
+## 第一本全文材料：《金刚经》
+
+已建立全经32分与星云大师《金刚经讲话》两册的对应记录，共96个官方页面。当前完成来源准备与机械核对，人工选段、经义审核和训练用途许可仍待完成，尚未训练。
+
+- [全文处理报告与32分审核入口](docs/experiments/diamond_full.md)
+- 本机审核工作单：`data/candidates/diamond-full/review-worksheets.jsonl`
